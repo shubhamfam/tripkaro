@@ -1,10 +1,72 @@
+:root {
+  --bgcolor: #fff;
+  --primary_color: #af54b8;
+  --secondary-color: #125ecf;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  background-color: var(--bgcolor);
+}
+
+.content {
+  margin-top: 30px;
+}
+
+.main-header {
   background-color: #000;
+  color: #fff;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+section header {
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  /*background-color: rgb(146, 141, 141);*/
+  /*border: 5px solid #5c5d5f;*/
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+}
+
+.card img {
+  width: inherit;
+  height: 300px;
+  object-fit: fill;
+  border-radius: 5px 5px 0 0;
+}
+
+.card .card-body {
+  color: #000;
+  font-size: 26px;
+  text-align: center;
 }
 
 .tk-logo img {
@@ -14,7 +76,8 @@ body {
 
 .header-container,
 .main-container,
-.main-searchbox-container {
+.main-searchbox-container,
+.contact-container {
   /*width: 1440px;*/
   max-width: 1440px;
   padding: 20px;
@@ -42,6 +105,10 @@ body {
   flex-wrap: wrap;
 }
 
+.main-tabs {
+  margin-bottom: 10px;
+}
+
 .main-nav {
   margin-right: 0.5em;
 }
@@ -56,7 +123,7 @@ body {
   display: inline;
 }
 
-.main-nav li a{
+.main-nav li a {
   margin-right: 0.5em;
 }
 
@@ -64,60 +131,59 @@ body {
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  text-decoration:none;
+  text-decoration: none;
   display: inline-block;
   padding: 0.5em 1.5em;
 }
 
 .main-nav a:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #fff;
 }
 
-.main-tabs {
+.main-tabs ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.main-tabs-btn {
-  border-radius: 20px;
-  color: black;
+.main-tabs ul li:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.main-tabs ul li:last-child {
+  border-radius: 0px 10px 10px 0px;
+}
+
+.main-tabs li {
+  border: 1px solid #000;
+}
+
+.main-tabs li:hover {
+  background-color: var(--primary_color);
+  color: white;
+}
+
+.main-tabs-links {
+  /*border-radius: 20px;*/
   cursor: pointer;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  color: #000;
 }
 
-/*.main-searchbox-img {
-  height: 50%;
-  position: relative;
+.main-tabs-links:hover {
+  color: white;
 }
-
-.main-searchbox-img img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  object-fit: contain;
-
-}
-
-.main-searchbox-searchbar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.main-searchbox-searchbar input{
-  width: 100%;
-}*/
 
 .main-searchbox-container {
   position: relative;
   height: 300px;
+  width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,12 +191,13 @@ body {
 
 .main-searchbox-img {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  /*top: 0%;
+  left: 0%;*/
   height: 100%;
   width: 100%;
   z-index: -1;
   background-color: blue;
+  object-fit: contain;
 }
 
 .main-searchbox-img img {
@@ -161,8 +228,169 @@ body {
 }
 
 footer {
-  color: white;
-  margin: 30px;
-  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  margin: 0px;
+  padding: 40px;
   text-align: center;
+}
+
+.about-container {
+  position: relative;
+  text-align: center;
+  color: rgb(3, 3, 3);
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about-content {
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.places-row,
+.hotels-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px;
+}
+
+.places-row .placetype-card,
+.hotels-row .hotel-card {
+  margin-bottom: 30px;
+}
+/*
+.places-row .placetype-card img{
+  border-radius: 50%;
+}
+*/
+
+.hotels-row .hotel-card {
+  border-radius: 10px;
+  padding: 0;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  background-color: #fff;
+}
+
+.hotels-row .hotel-card img,
+.hotels-row .hotel-card .card-body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.hotels-row .hotel-card img {
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.hotels-row .hotel-card .card-body {
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 10;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Reach Us CSS*/
+
+
+.reach {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px;
+  margin-bottom: 15px;
+  margin-left: 0px;
+}
+
+.row input[type="text"] {
+  width: 340px;
+  height: 40px;
+  background-color: rgb(204, 197, 197);
+  border: none;
+  padding: 10px;
+}
+
+.reach input[type="email"], textarea {
+  width: 693px;
+  height: 40px;
+  background-color: rgb(204, 197, 197);
+  border: none;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.reach textarea {
+  resize: none;
+}
+
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.contact-container h3 {
+  color: rgb(77, 74, 74);
+  padding: 15px;
+  font-size: 25px;
+}
+
+.reach .button {
+  background-color: #37ad47;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.contact-header {
+  width: 100%;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+.reach-header {
+  font-size: 50px;
+  font-weight: bold;
 }

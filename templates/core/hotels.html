@@ -1,0 +1,98 @@
+{% extends "base.html" %} {%load static%} {% block main %}
+<main class="main-container">
+  <div class="content">
+    <header class="content-headers">
+      <h1><center>Hotels</center></h1>
+    </header>
+    <div class="hotels-row card-row">
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/cafe.png' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Cafes</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/dine.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Dine In</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/lodge.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Dine In & Lodging</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/resort.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Resorts</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/luxury.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Luxury Hotels</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/inn.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Inns</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/suite.jpeg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">All-suites</h5>
+        </div>
+      </div>
+
+      <div class="card hotel-card" style="width: 18rem">
+        <img
+          src="{% static 'assets/hotel-types/family.jpg' %}"
+          class="circle-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Family Restaurants</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock main %}

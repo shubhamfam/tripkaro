@@ -1,14 +1,19 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <link
+      href="{% static 'css/font-awesome/css/font-awesome.min.css'%}"
+      rel="stylesheet"
+    />
     <title>TripKaro</title>
   </head>
+
   <body>
     <header class="main-header">
       <div class="header-container">
@@ -18,10 +23,10 @@
         <nav class="main-nav">
           <ul class="main-nav-list">
             <li>
-                <a href="/">Home</a>
+              <a href="{% url 'about' %}">About</a>
             </li>
             <li>
-              <a href="/contactus">Reach Us</a>
+              <a href="{% url 'contactus' %}">Reach Us</a>
             </li>
             <li>
               <button class="login-btn" href="#">Login / Sign Up</button>
@@ -30,36 +35,11 @@
         </nav>
       </div>
     </header>
+    
+    
+    {% block main %}{% endblock main %}
 
-    <main>
-      <div class="about-container">
-        <img
-          src="https://www.w3schools.com/howto/img_snow_wide.jpg"
-          alt="Snow"
-          style="width: 95%"
-        />
-        <div class="centered">About TripKaro</div>
-      </div>
-      <div class="about-content">
-        <pre><center>According to a small online survey conducted by us, we have found that most of the people face
-    problems in planning trips properly within their budget. People also face problems with finding
-    & finalizing places to visit and getting updated information on them. We also noticed that there is
-    no such platform which takes advantage of resources and solutions that local/domestic tour
-    operators provide.
-    To solve these problems, we are proposing a solution where we help people plan and execute
-    their trips & tours using our platform. Through this platform, we will provide users/travelers with
-    auto-generated trip plans & packages provided by tour operators based on their inputs such as
-    destination, budget and other personal preferences etc. We also provide business/corporate trip
-    plans to companies. These trip plans will be customizable. We also plan to take advantage of
-    existing local tour operators, by providing them a platform to list their trip plans & packages.
-    These tour operators provide packages with properly planned trips, transportation,
-    accommodation, dining and activities, which can be helpful in creating great experiences for
-    travelers within their budget. Along with this we provide a platform to other businesses such as
-    hotels, restaurants, museums, parks, accommodation providers etc. And recommend these places
-    to our travelers on their trip.
-</center></pre>
-      </div>
-    </main>
+
 
     <footer>
       <h2>Footer</h2>

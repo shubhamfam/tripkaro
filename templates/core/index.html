@@ -7,22 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/index.css'%}" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      href="{% static 'css/font-awesome/css/font-awesome.min.css'%}"
+      rel="stylesheet"
+    />
     <title>TripKaro</title>
   </head>
   <body>
     <header class="main-header">
       <div class="header-container">
         <h1 class="tk-logo">
-          <img src="{% static 'assets/logo.png' %}" />
+          <a href="/"><img src="{% static 'assets/logo.png' %}" /></a>
         </h1>
         <nav class="main-nav">
           <ul class="main-nav-list">
             <li>
-              <a href="about">About</a>
+              <a href="{% url 'about' %}">About</a>
             </li>
             <li>
-              <a href="contactus">Contact Us</a>
+              <a href="{% url 'contactus' %}">Reach Us</a>
             </li>
             <li>
               <button class="login-btn" href="#">Login / Sign Up</button>
@@ -35,157 +38,178 @@
     <main class="main-container">
       <div class="main-tabs">
         <ul>
-          <li><button class="main-tabs-btn">Places</button></li>
-          <li><button class="main-tabs-btn">Hotels</button></li>
-          <li><button class="main-tabs-btn">Holiday Packages</button></li>
-          <li><button class="main-tabs-btn">Buses</button></li>
-          <li><button class="main-tabs-btn">Trains</button></li>
+          <li>
+            <a class="main-tabs-links" href="{% url 'places' %}"
+              ><span><i class="fa fa-map-marker" aria-hidden="true"></i> </span
+              >Places</a
+            >
+          </li>
+          <li>
+            <a class="main-tabs-links" href="{% url 'hotels' %}"
+              ><span><i class="fa fa-cutlery" aria-hidden="true"></i> </span
+              >Hotels</a
+            >
+          </li>
+          <li><a class="main-tabs-links"><span><i class="fa fa-globe" aria-hidden="true"></i> </span
+            >Holiday Packages</a></li>
+          <li><a class="main-tabs-links"><span><i class="fa fa-bus" aria-hidden="true"></i> </span
+            >Buses</a></li>
+          <li><a class="main-tabs-links"><span><i class="fa fa-train" aria-hidden="true"></i> </span
+            >Trains</a></li>
         </ul>
       </div>
 
       <div class="main-searchbox-container landscape">
         <div class="main-searchbox-img">
-          <img class="search-backgroudnd-img" src="{% static 'assets/search-backgroung-img.jpg' %}" />
+          <img
+            class="search-backgroudnd-img"
+            src="{% static 'assets/search-backgroung-img.jpg' %}"
+          />
         </div>
-        
+
         <div class="main-searchbox-searchbar">
-          <input type="search" name="search" id="searbar" aria-label="Search through site content" placeholder="Where you wanna go?">
+          <input
+            type="search"
+            name="search"
+            id="searbar"
+            aria-label="Search through site content"
+            placeholder="Where you wanna go?"
+          />
         </div>
       </div>
 
-    </main>
-
-
-
-
-
-        <!-- The Tour Section -->
-        <div class="w3-black" id="tour">
-          <div
-            class="w3-container w3-content w3-padding-64"
-            style="max-width: 800px"
-          >
-            <div class="w3-row-padding w3-padding-32" style="margin: 0 -16px">
-              <div class="w3-third w3-margin-bottom">
-                <img
-                  src="{% static 'assets/newyork.jpg' %}"
-                  alt="New York"
-                  style="width: 100%"
-                  class="w3-hover-opacity"
-                />
-                <div class="w3-container w3-white">
-                  <p>
-                    <b>
-                      <center>New York</center>
-                    </b>
-                  </p>
-                </div>
+      <div class="content">
+        <section class="top-destinations">
+          <header class="content-headers">
+            <h3>Top Destinations</h3>
+          </header>
+          <div class="card-row">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/newyork.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Pune</h5>
               </div>
-    
-              <div class="w3-third w3-margin-bottom">
-                <img
-                  src="{% static 'assets/paris.jpg' %}"
-                  alt="Paris"
-                  style="width: 100%"
-                  class="w3-hover-opacity"
-                />
-                <div class="w3-container w3-white">
-                  <p>
-                    <b>
-                      <center>Paris</center>
-                    </b>
-                  </p>
-                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/paris.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mumbai</h5>
               </div>
-    
-              <div class="w3-third w3-margin-bottom">
-                <img
-                  src="{% static 'assets/sanfran.jpg' %}"
-                  alt="San Francisco"
-                  style="width: 100%"
-                  class="w3-hover-opacity"
-                />
-                <div class="w3-container w3-white">
-                  <p>
-                    <b><center>San Francisco</center></b>
-                  </p>
-                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/newyork.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Banglore</h5>
               </div>
-    
-              <!-- The Tour Section -->
-              <div class="w3-black" id="tour">
-                <div
-                  class="w3-container w3-content w3-padding-64"
-                  style="max-width: 800px"
-                >
-                  <div class="w3-row-padding w3-padding-32" style="margin: 0 -16px">
-                    <div class="w3-third w3-margin-bottom">
-                      <img
-                        src="{% static 'assets/newyork.jpg' %}"
-                        alt="New York"
-                        style="width: 100%"
-                        class="w3-hover-opacity"
-                      />
-                      <div class="w3-container w3-white">
-                        <p>
-                          <b>
-                            <center>New York</center>
-                          </b>
-                        </p>
-                      </div>
-                    </div>
-    
-                    <div class="w3-third w3-margin-bottom">
-                      <img
-                        src="{% static 'assets/paris.jpg' %}"
-                        alt="Paris"
-                        style="width: 100%"
-                        class="w3-hover-opacity"
-                      />
-                      <div class="w3-container w3-white">
-                        <p>
-                          <b>
-                            <center>Paris</center>
-                          </b>
-                        </p>
-                      </div>
-                    </div>
-    
-                    <div class="w3-third w3-margin-bottom">
-                      <img
-                        src="{% static 'assets/sanfran.jpg' %}"
-                        alt="San Francisco"
-                        style="width: 100%"
-                        class="w3-hover-opacity"
-                      />
-                      <div class="w3-container w3-white">
-                        <p>
-                          <b><center>San Francisco</center></b>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyderabad</h5>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-
-
+        <section class="holiday-packages">
+          <header class="content-headers">
+            <h3>Holiday Packages</h3>
+          </header>
+          <div class="card-row">
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/newyork.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package 1</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/paris.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package 3</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/newyork.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package 2</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package 4</h5>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <footer>
       <h2>Footer</h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloribus veniam temporibus nam, iusto ducimus et dignissimos adipisci. Commodi ea ab perspiciatis molestias similique? Voluptatem voluptatum consequatur aliquam beatae minus.
-      Magnam autem est id, odit doloribus incidunt repellendus ipsam rerum commodi quo nesciunt dolor asperiores nam eos, consectetur facilis vero placeat recusandae! Debitis in optio dolor sequi animi blanditiis veniam.
-      Quisquam nihil, odio sint temporibus natus aut deserunt tempora quaerat magnam qui dolorem animi rem quidem modi officia voluptate tempore sit repudiandae eligendi debitis iusto facere nesciunt reiciendis. Aliquid, quae!
-      Sunt, ex quis! Quibusdam facilis soluta minima non eaque dignissimos inventore nisi reprehenderit molestias earum in omnis blanditiis suscipit doloribus, quos officia, delectus ad quo rerum fugit. Dolor, modi odit.
-      Magni ab ipsa perspiciatis doloribus, quisquam quae aliquam nobis vitae magnam adipisci ipsam repudiandae dignissimos aperiam. Magnam hic at ipsam obcaecati quos, deserunt fuga debitis totam, ea, quaerat inventore amet.
-      Quasi, qui. Odio, neque voluptatem. Ipsam ex illo saepe, doloremque, veniam ad quod alias repudiandae dolorum repellendus quam delectus iste eveniet hic soluta excepturi officia quo molestiae enim libero maiores!
-      Fuga hic temporibus sunt distinctio quisquam expedita. Ratione repellat eos sint corrupti hic voluptatum ipsa odit quaerat quia consectetur nihil nisi laudantium voluptatibus fugit ipsam a libero expedita, iure commodi.
-      Temporibus reiciendis similique ullam sit laudantium repudiandae, eos voluptatum maxime veritatis quidem commodi dolorum alias eum atque excepturi quae porro esse veniam obcaecati dolores nulla repellat amet quasi! Iusto, doloribus!
-      Nemo voluptatem aliquam magni! Vero sequi distinctio quasi inventore error ad et aspernatur temporibus perspiciatis molestias iure delectus, adipisci eos modi quia laboriosam ipsa commodi? Aliquid quod praesentium atque quam?
-      Blanditiis nemo fuga magnam. Laboriosam quia fugit, ea iusto excepturi voluptatem beatae a quae nulla cum vero libero voluptas, iste laudantium, ab qui. Soluta, cumque dolor. Harum autem dolorum iusto!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloribus
+      veniam temporibus nam, iusto ducimus et dignissimos adipisci. Commodi ea
+      ab perspiciatis molestias similique? Voluptatem voluptatum consequatur
+      aliquam beatae minus. Magnam autem est id, odit doloribus incidunt
+      repellendus ipsam rerum commodi quo nesciunt dolor asperiores nam eos,
+      consectetur facilis vero placeat recusandae! Debitis in optio dolor sequi
+      animi blanditiis veniam. Quisquam nihil, odio sint temporibus natus aut
+      deserunt tempora quaerat magnam qui dolorem animi rem quidem modi officia
+      voluptate tempore sit repudiandae eligendi debitis iusto facere nesciunt
+      reiciendis. Aliquid, quae! Sunt, ex quis! Quibusdam facilis soluta minima
+      non eaque dignissimos inventore nisi reprehenderit molestias earum in
+      omnis blanditiis suscipit doloribus, quos officia, delectus ad quo rerum
+      fugit. Dolor, modi odit. Magni ab ipsa perspiciatis doloribus, quisquam
+      quae aliquam nobis vitae magnam adipisci ipsam repudiandae dignissimos
+      aperiam. Magnam hic at ipsam obcaecati quos, deserunt fuga debitis totam,
+      ea, quaerat inventore amet. Quasi, qui. Odio, neque voluptatem. Ipsam ex
+      illo saepe, doloremque, veniam ad quod alias repudiandae dolorum
+      repellendus quam delectus iste eveniet hic soluta excepturi officia quo
+      molestiae enim libero maiores! Fuga hic temporibus sunt distinctio
+      quisquam expedita. Ratione repellat eos sint corrupti hic voluptatum ipsa
+      odit quaerat quia consectetur nihil nisi laudantium voluptatibus fugit
+      ipsam a libero expedita, iure commodi. Temporibus reiciendis similique
+      ullam sit laudantium repudiandae, eos voluptatum maxime veritatis quidem
+      commodi dolorum alias eum atque excepturi quae porro esse veniam obcaecati
+      dolores nulla repellat amet quasi! Iusto, doloribus! Nemo voluptatem
+      aliquam magni! Vero sequi distinctio quasi inventore error ad et
+      aspernatur temporibus perspiciatis molestias iure delectus, adipisci eos
+      modi quia laboriosam ipsa commodi? Aliquid quod praesentium atque quam?
+      Blanditiis nemo fuga magnam. Laboriosam quia fugit, ea iusto excepturi
+      voluptatem beatae a quae nulla cum vero libero voluptas, iste laudantium,
+      ab qui. Soluta, cumque dolor. Harum autem dolorum iusto!
     </footer>
   </body>
 </html>
