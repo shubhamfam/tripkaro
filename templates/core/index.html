@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/loginpage.css'%}" />
     <link
       href="{% static 'css/font-awesome/css/font-awesome.min.css'%}"
       rel="stylesheet"
@@ -28,7 +29,9 @@
               <a href="{% url 'contactus' %}">Reach Us</a>
             </li>
             <li>
-              <button class="login-btn" href="#">Login / Sign Up</button>
+              <button class="login-btn">
+                <a href="{% url 'login' %}">Login / Sign Up</a>
+              </button>
             </li>
           </ul>
         </nav>
@@ -47,15 +50,15 @@
           <li>
             <a class="main-tabs-links" href="{% url 'hotels' %}"
               ><span><i class="fa fa-cutlery" aria-hidden="true"></i> </span
-              >Hotels</a
+              >Hotels & Accomodation</a
             >
           </li>
-          <li><a class="main-tabs-links"><span><i class="fa fa-globe" aria-hidden="true"></i> </span
-            >Holiday Packages</a></li>
-          <li><a class="main-tabs-links"><span><i class="fa fa-bus" aria-hidden="true"></i> </span
-            >Buses</a></li>
-          <li><a class="main-tabs-links"><span><i class="fa fa-train" aria-hidden="true"></i> </span
-            >Trains</a></li>
+          <li>
+            <a class="main-tabs-links"
+              ><span><i class="fa fa-globe" aria-hidden="true"></i> </span
+              >Holiday Packages</a
+            >
+          </li>
         </ul>
       </div>
 
@@ -68,13 +71,15 @@
         </div>
 
         <div class="main-searchbox-searchbar">
-          <input
-            type="search"
-            name="search"
-            id="searbar"
-            aria-label="Search through site content"
-            placeholder="Where you wanna go?"
-          />
+          <form action="{% url 'place' %}" method="get">
+            <input
+              type="search"
+              name="q"
+              id="searbar"
+              aria-label="Search through site content"
+              placeholder="Where you wanna go?"
+            />
+          </form>
         </div>
       </div>
 
@@ -124,9 +129,49 @@
                 <h5 class="card-title">Hyderabad</h5>
               </div>
             </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyderabad</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyderabad</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyderabad</h5>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="{% static 'assets/cards-temp/sanfran.jpg' %}"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyderabad</h5>
+              </div>
+            </div>
           </div>
         </section>
-
+        <!--
         <section class="holiday-packages">
           <header class="content-headers">
             <h3>Holiday Packages</h3>
@@ -173,7 +218,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
       </div>
     </main>
 

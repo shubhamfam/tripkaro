@@ -1,0 +1,106 @@
+{%extends "base.html" %}{%load static%} {% block link %}
+<link rel="stylesheet" href="{% static 'css/planyourtrip.css'%}" />
+{% endblock link %} {% block main%}
+
+<main class="main-container">
+  <div class="plantrip-form-container">
+    <form action="" method="post">
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label">
+            <label for="fname">First Name</label>
+          </div>
+          <input type="text" class="input" id="fname" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label">
+            <label for="lname">Last Name</label>
+          </div>
+          <input type="text" class="input" id="lname" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label">
+            <label for="age">Age</label>
+          </div>
+          <input type="number" name="age" min="13" max="80" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="gender">Gender</label></div>
+          <input type="radio" name="gender" value="male" id="gender-m" />
+          <label for="gender-m">Male</label>
+          <input type="radio" name="gender" value="female" id="gender-f" />
+          <label for="gender-f">Female</label>
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="email">Email</label></div>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="input">
+          <div class="label"><label for="phone">Contact Number</label></div>
+          <input type="tel" name="contact" id="Contact" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="city">City</label></div>
+          <input type="text" class="input" id="city" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="state">State</label></div>
+          <input type="text" class="input" id="state" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="destination">Destination</label></div>
+          <input type="text" class="input" id="destination" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="date">Date</label></div>
+          <input type="date" name="date" id="date" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label"><label for="n_people">No of people</label></div>
+          <input type="number" id="n_people" name="n_people" min="1" max="80" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label">Budget Range</div>
+          <label for="min">Min</label>
+          <input type="number" name="budget-min" id="min" />
+          <label for="max">Max</label>
+          <input type="number" name="budget-max" id="max" />
+        </div>
+      </div>
+      <div class="plantrip-row">
+        <div class="input">
+          <div class="label">
+            <label for="transport">Type of transport</label>
+          </div>
+          <select class="input" id="transport">
+            <option value="bus">Bus</option>
+            <option value="cab">Cab</option>
+            <option value="pvt-vehicle">Private vehicle</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+{% endblock main%}

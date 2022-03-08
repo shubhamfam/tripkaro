@@ -1,0 +1,156 @@
+
+/* Bordered form 
+.login-form-container  {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-container form {
+  border: 3px solid #f1f1f1;
+}
+
+Full-width inputs 
+.login-form-container input[type="text"],
+.login-form-container input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-form-container button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-form-container button:hover {
+  opacity: 0.8;
+}
+
+.login-form-container .cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+.login-form-container span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+  .login-form-container span.psw {
+    display: block;
+    float: none;
+  }
+  .login-form-container .cancelbtn {
+    width: 100%;
+  }
+}
+*/
+
+.login{  
+  width: 470px;  
+  overflow: hidden;  
+  margin: auto;  
+  margin: 20 0 0 450px;  
+  padding: 30px;  
+  background: #000000da;  
+  border-radius: 15px ;  
+}  
+
+.login h1{  
+text-align: center;  
+color: #277582;  
+padding: 20px;  
+}  
+
+.login h2{  
+text-align: center;  
+color: #277582;  
+padding: 20px;  
+}  
+
+
+.login h3{  
+text-align: center;  
+color: #ffffff;  
+margin-top: 15px;  
+} 
+
+.login label{  
+color: #feffff;  
+font-size: 17px;  
+}  
+.login #Uname{  
+width: 340px;  
+height: 30px;  
+border: none;  
+border-radius: 3px;  
+padding-left: 8px;  
+}  
+.login #Pass{  
+width: 340px;  
+height: 30px;  
+border: none;  
+border-radius: 3px;  
+padding-left: 8px;  
+
+}  
+.login #log{  
+width: 100px;  
+height: 30px;  
+border: none;  
+border-radius: 17px;  
+padding-left: 7px;  
+color: rgb(0, 0, 0);  
+}
+
+.login span{  
+color: white;  
+font-size: 17px;  
+}
+
+.login a{  
+float: right;  
+color:rgb(9, 18, 156);
+text-decoration: none;
+}
+
+.login .row{  
+  display:flex;
+  flex-direction: row;
+  color:white;
+  }
+
+.input input[type=text],.input input[type=email],.input input[type=password]{  
+  width: 200px;
+  height: 40px;
+  background-color: rgb(204, 197, 197);
+  border: none;
+  padding: 10px;
+  }
+
+.input input[type=radio]{  
+  color: rgb(255, 255, 255);
+  }
+
+.btn-container .button{
+  color:white;
+  background-color: green;
+  padding: 10px;
+  border: none;
+}
+
+.createaccount{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

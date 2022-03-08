@@ -1,0 +1,26 @@
+{% extends "base.html" %} {%load static%} 
+{%block main%}
+<main class="main-container">
+    <section class="top-destinations">
+        <header class="content-headers">
+          <h3>Top Destinations in {{place}}</h3>
+        </header>
+        <div class="card-row">
+        {%for destination in data%}
+          <div class="card" style="width: 18rem">
+            <img
+              src="{%static destination.img %}"
+              class="card-img-top"
+              alt="..."
+              width="200px"
+              height="200px"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{destination.name}}</h5>
+            </div>
+          </div>
+        {%endfor%}
+        </div>
+      </section>
+</main>
+{%endblock main%}

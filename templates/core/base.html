@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/loginpage.css'%}" />
+    {% block link %}{% endblock link %}
     <link
       href="{% static 'css/font-awesome/css/font-awesome.min.css'%}"
       rel="stylesheet"
@@ -29,7 +31,7 @@
               <a href="{% url 'contactus' %}">Reach Us</a>
             </li>
             <li>
-              <button class="login-btn" href="#">Login / Sign Up</button>
+              <button class="login-btn"><a href="{% url 'login' %}">Login / Sign Up</a></button>
             </li>
           </ul>
         </nav>

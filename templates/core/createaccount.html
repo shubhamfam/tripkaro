@@ -1,0 +1,53 @@
+{% extends "base.html" %} {%load static%} {% block main %}
+<center>
+
+       <div class="login createaccount" >
+              <h1>Create Account</h1>
+              <form>
+                     <div class="row">
+                            <div class="input"><input type="text" name="fname" placeholder="First name"></div>
+                            <div class="input"><input type="text" name="lname" placeholder="Last name"></div>
+                     </div>
+
+                     <div class="row">
+                            <div> <label>Age:</label>
+                                   <input type="number" min="13" max="80" name="age" placeholder="age">
+                            </div>
+
+                            <div><label>Gender:</label>
+                                   <input type="radio" name="gender" value="Male">Male
+                                   <input type="radio" name="gender" value="Female">Female
+                            </div>
+                     </div>
+
+                     <div class="row">
+                            <div class="input"><input type="email" id="myEmail" name="email"
+                                          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                          placeholder="Enter Email ID"></div>
+                            <div class="input"><input type="text" name="Contact No" placeholder="Contact No"></div>
+                     </div>
+
+
+
+                     <div class="row">
+                     <div class="input"><input type="text" name="City" placeholder="City"></div>
+                     <div class="input"><input type="text" name="State" placeholder="State"></div>
+                     </div>
+
+                     <div class="row">
+                            <div class="input"><input type="password" name="Create Password" placeholder="Create Password"></div>
+                            <div class="input"><input type="password" name="Re-enter Password" placeholder="Re-enter Password"></div>
+                     </div>
+                     
+
+                     <div class="btn-container">
+                            <input class="button" type="reset" value="Back">
+                            <input class="button" type="reset" value="Reset">
+                            <input class="button" type="submit" value="Create Account">
+                     </div>
+              </form>
+       </div>
+
+       </font>
+</center>
+{% endblock main %}

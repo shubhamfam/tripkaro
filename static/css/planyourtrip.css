@@ -1,0 +1,56 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.plantrip-form-container {
+ /* border: 1px solid var( --primary_color);
+  border-radius: 10px;*/
+  padding: 30px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plantrip-row {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.plantrip-row .input{
+  display: flex;
+}
+
+.plantrip-row input {
+    padding: 10px;
+}
+
+.plantrip-row input[type="text"] {
+  width: 340px;
+  height: 40px;
+  padding: 10px;
+}
+
+.plantrip-row input[type="email"],
+input[type="tel"] {
+  width: 340px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+
+
+.plantrip-form-container form .label {
+  font-size: 20px;
+  font-weight: bold;
+  width: 170px;
+}
+
+select, option , input[type=date]{
+  font-size: 20px;
+}

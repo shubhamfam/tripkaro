@@ -1,100 +1,125 @@
-{% extends "base.html" %} {%load static%} 
-
-{% block main %}
+{% extends "base.html" %} {%load static%} {% block main %}
 <main class="main-container">
   <div class="content">
-    <header class="content-headers">
-      <h1><center>Places</center></h1>
-    </header>
-    <div class="places-row card-row ">
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/beach.jpeg' %}"
-          class="circle-img"
-          alt="..."
+    <div class="main-searchbox-searchbar">
+      <form class="place-type-form" action="{% url 'place' %}" method="get" onsubmit="submitForm(event)">
+        <input
+          type="search"
+          name="q"
+          id="searbar"
+          aria-label="Search through site content"
+          placeholder="Where you wanna go?"
+          required
         />
-        <div class="card-body">
-          <h5 class="card-title">Beaches</h5>
-        </div>
-      </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/history.jpg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Historical Places</h5>
-        </div>
-      </div>
+        <div class="places-row card-row">
+          <div class="card placetype-card" style="width: 18rem"  data-tag="Beach">
+            <img
+              src="{% static 'assets/places-types/beach.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Beaches</h5>
+            </div>
+          </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/religious.jpg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Religious Places</h5>
-        </div>
-      </div>
+            <div class="card placetype-card" style="width: 18rem" data-tag="Historical">
+              <img
+                src="{% static 'assets/places-types/history.jpg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Historical Places</h5>
+              </div>
+           
+            </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/natpark.jpg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">National Parks</h5>
-        </div>
-      </div>
+            <div class="card placetype-card" style="width: 18rem"  data-tag="Religious">
+              <img
+                src="{% static 'assets/places-types/religious.jpg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Religious Places</h5>
+              </div>
+            </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/themepark.webp' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Theme & Water Parks</h5>
-        </div>
-      </div>
+            <div class="card placetype-card" style="width: 18rem"  data-tag="Garden/Park">
+              <img
+                src="{% static 'assets/places-types/natpark.jpg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">National Parks</h5>
+              </div>
+            </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/heritage.webp' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Heritage Sites</h5>
-        </div>
-      </div>
+            <div class="card placetype-card" style="width: 18rem"  data-tag="Amusement/Theme Parks">
+              <img
+                src="{% static 'assets/places-types/themepark.webp' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Theme & Water Parks</h5>
+              </div>
+            </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/hill.jpg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Hills & Mountains</h5>
-        </div>
-      </div>
+            <div class="card placetype-card" style="width: 18rem" data-tag="History and Culture">
+              <img
+                src="{% static 'assets/places-types/heritage.webp' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Heritage Sites</h5>
+              </div>
+            </div>
 
-      <div class="card placetype-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/places-types/garden.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Gardens & Parks</h5>
+            <div class="card placetype-card" style="width: 18rem" data-tag="Hills & Valleys">
+              <img
+                src="{% static 'assets/places-types/hill.jpg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hills & Valleys</h5>
+              </div>
+            </div>
+
+
+            <div class="card placetype-card" style="width: 18rem" data-tag="Shopping">
+              <img
+                src="{% static 'assets/places-types/garden.jpeg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Shopping</h5>
+              </div>
+            </div>
+
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </main>
+<script type="text/JavaScript">
+  function submitForm(event){
+    event.preventDefault();
+  }
+
+  divs = document.querySelectorAll('.placetype-card')
+  form = document.forms[0]
+  Array.from(divs).forEach(function(div) {
+    div.addEventListener('click',(e) => {
+      form.innerHTML += '<input type="hidden" name="type" value='+e.target.parentNode.getAttribute('data-tag')+ '>'
+      form.submit()
+    })
+  })
+</script>
 {% endblock main %}

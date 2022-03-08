@@ -19,7 +19,7 @@ body {
 }
 
 .main-header {
-  background-color: #000;
+  background-color: black;
   color: #fff;
 }
 
@@ -43,6 +43,10 @@ section header {
   align-items: center;
 }
 
+.card-row a {
+  text-decoration: none;
+}
+
 .card {
   /*background-color: rgb(146, 141, 141);*/
   /*border: 5px solid #5c5d5f;*/
@@ -59,7 +63,7 @@ section header {
 .card img {
   width: inherit;
   height: 300px;
-  object-fit: fill;
+  object-fit: contain;
   border-radius: 5px 5px 0 0;
 }
 
@@ -138,6 +142,10 @@ section header {
 
 .main-nav a:hover {
   border-bottom: 1px solid #fff;
+}
+
+.login-btn a:hover {
+  border: none;
 }
 
 .main-tabs ul {
@@ -228,7 +236,7 @@ section header {
 }
 
 footer {
-  background-color: #000;
+  background-color: black;
   color: #fff;
   margin: 0px;
   padding: 40px;
@@ -394,3 +402,5 @@ footer {
   font-size: 50px;
   font-weight: bold;
 }
+
+
