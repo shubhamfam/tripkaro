@@ -54,7 +54,10 @@ section header {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
+  margin-bottom: 20px;
 }
+
+
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
@@ -63,7 +66,7 @@ section header {
 .card img {
   width: inherit;
   height: 300px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 5px 5px 0 0;
 }
 
@@ -102,6 +105,8 @@ section header {
   font-weight: bold;
 }
 
+
+
 .main-header .header-container {
   display: flex;
   align-items: center;
@@ -110,7 +115,7 @@ section header {
 }
 
 .main-tabs {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .main-nav {
@@ -146,6 +151,10 @@ section header {
 
 .login-btn a:hover {
   border: none;
+}
+
+.login-btn a{
+  padding:0px;
 }
 
 .main-tabs ul {
@@ -266,7 +275,7 @@ footer {
 }
 
 .places-row,
-.hotels-row {
+.hotels-row , .packs-row {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -276,7 +285,7 @@ footer {
 }
 
 .places-row .placetype-card,
-.hotels-row .hotel-card {
+.hotels-row .hotel-card , .packs-row .pack_card{
   margin-bottom: 30px;
 }
 /*
@@ -285,7 +294,7 @@ footer {
 }
 */
 
-.hotels-row .hotel-card {
+.hotels-row .hotel-card , .packs-row .pack_card{
   border-radius: 10px;
   padding: 0;
   width: 250px;
@@ -294,21 +303,21 @@ footer {
   background-color: #fff;
 }
 
-.hotels-row .hotel-card img,
-.hotels-row .hotel-card .card-body {
+.hotels-row .hotel-card img,.packs-row .pack_card img,
+.hotels-row .hotel-card .card-body , .packs-row .pack_card .card-body{
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-.hotels-row .hotel-card img {
+.hotels-row .hotel-card img, .packs-row .pack_card img {
   top: 0;
   left: 0;
   object-fit: cover;
   border-radius: inherit;
 }
 
-.hotels-row .hotel-card .card-body {
+.hotels-row .hotel-card .card-body, .packs-row .pack_card .card-body {
   background: rgba(0, 0, 0, 0.7);
   font-size: 30px;
   font-weight: bold;
@@ -403,4 +412,29 @@ footer {
   font-weight: bold;
 }
 
+
+.packs-row .pack_card p {
+  font-size: 16px;
+}
+
+.red {
+  background-color: red;
+  color: #fff;
+}
+
+.green {
+  background-color: green;
+  color: #fff;
+}
+
+.small {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 10px;
+}
+
+
+
+/* Footer CSS */
 

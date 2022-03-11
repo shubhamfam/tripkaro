@@ -1,14 +1,11 @@
 {% extends "base.html" %} {%load static%}
 
-{% block link %}
-<link rel="stylesheet" href="loginpage.css">
-{% endblock link %}
 
 {% block main %}
 <main class="main-container">
   <div class="login-form-container">
-      <div class="login">
-        <form id="login" method="get" action="login.php">
+      <div class="login createaccount">
+        <form id="login" action="{% url 'user_account' %}">
           <h1>Login</h1>
           <label><b>User Name
             </b>
@@ -20,19 +17,15 @@
           </label>
           <input type="Password" name="Pass" id="Pass" placeholder="Password">
           <br><br>
-          <input type="button" name="log" id="log" value="Log In Here">
-          <br><br>
+          <div class="btn-container">
+          <input class="button" type="submit" value="Login"></div>
           <input type="checkbox" id="check">
           <span>Remember me</span>
-          <span class="psw"><a href="#">Forgot password?</a></span>
+          <span class="psw"><a href="#" style="color:#fff">Forgot password?</a></span>
           <br><br>
           
           <div>
-            
-            
-              <h3>Does not have account?<a href="{% url 'createaccount' %}">Create Account</a></h3>
-           
-
+            <h3 >Does not have account?<a href="{% url 'createaccount' %}" style="color:#fff">Create Account</a></h3>
           </div>
         </form>
       </div>

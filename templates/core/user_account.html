@@ -1,0 +1,119 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/index.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/loginpage.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/user_account.css'%}" />
+    <link
+      href="{% static 'css/font-awesome/css/font-awesome.min.css'%}"
+      rel="stylesheet"
+    />
+    <title>TripKaro</title>
+  </head>
+
+  <body>
+    <header class="main-header">
+      <div class="header-container">
+        <h1 class="tk-logo">
+          <a href="/"><img src="{% static 'assets/logo.png' %}" /></a>
+        </h1>
+        <nav class="main-nav">
+          <ul class="main-nav-list">
+            <li>
+              <a href="{% url 'planyourtrip' %}">Plan Your Trip</a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}">About</a>
+            </li>
+            <li>
+              <a href="{% url 'contactus' %}">Reach Us</a>
+            </li>
+            <li>
+              <button class="profile-img small" href="{% url 'user_account' %}"></button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+<div class="main-container">
+  <div class="profile-wrapper">
+    <div class="sidebar">
+      <div class="profile-img">
+        <img src="{% static 'assets/profilepic_placeholder.png' %}" alt="" />
+      </div>
+      <div class="sidebar-nav">
+        <ul>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My Trips</a></li>
+          <li><a href="/">Log Out</a></li>
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile-content">
+      <section class="my-trips">
+        <a href="#">
+          <div class="trip-card">
+            <div class="trip-card-header">
+              <h2>Trip to manali</h2>
+              <p>Date: 10-05-2022</p>
+            </div>
+            <div class="trip-card-body">
+              <button class="green">
+                 <a href="{% url 'customize' %}" style="color:#fff;">Customize</a> </button>
+              <button class="red">  <a href="#" style="color:#fff;">Cancel Trip</a></button>
+            </div>
+          </div>
+        </a
+
+         
+      </section>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer>
+    <h2>Footer</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui doloribus
+    veniam temporibus nam, iusto ducimus et dignissimos adipisci. Commodi ea
+    ab perspiciatis molestias similique? Voluptatem voluptatum consequatur
+    aliquam beatae minus. Magnam autem est id, odit doloribus incidunt
+    repellendus ipsam rerum commodi quo nesciunt dolor asperiores nam eos,
+    consectetur facilis vero placeat recusandae! Debitis in optio dolor sequi
+    animi blanditiis veniam. Quisquam nihil, odio sint temporibus natus aut
+    deserunt tempora quaerat magnam qui dolorem animi rem quidem modi officia
+    voluptate tempore sit repudiandae eligendi debitis iusto facere nesciunt
+    reiciendis. Aliquid, quae! Sunt, ex quis! Quibusdam facilis soluta minima
+    non eaque dignissimos inventore nisi reprehenderit molestias earum in
+    omnis blanditiis suscipit doloribus, quos officia, delectus ad quo rerum
+    fugit. Dolor, modi odit. Magni ab ipsa perspiciatis doloribus, quisquam
+    quae aliquam nobis vitae magnam adipisci ipsam repudiandae dignissimos
+    aperiam. Magnam hic at ipsam obcaecati quos, deserunt fuga debitis totam,
+    ea, quaerat inventore amet. Quasi, qui. Odio, neque voluptatem. Ipsam ex
+    illo saepe, doloremque, veniam ad quod alias repudiandae dolorum
+    repellendus quam delectus iste eveniet hic soluta excepturi officia quo
+    molestiae enim libero maiores! Fuga hic temporibus sunt distinctio
+    quisquam expedita. Ratione repellat eos sint corrupti hic voluptatum ipsa
+    odit quaerat quia consectetur nihil nisi laudantium voluptatibus fugit
+    ipsam a libero expedita, iure commodi. Temporibus reiciendis similique
+    ullam sit laudantium repudiandae, eos voluptatum maxime veritatis quidem
+    commodi dolorum alias eum atque excepturi quae porro esse veniam obcaecati
+    dolores nulla repellat amet quasi! Iusto, doloribus! Nemo voluptatem
+    aliquam magni! Vero sequi distinctio quasi inventore error ad et
+    aspernatur temporibus perspiciatis molestias iure delectus, adipisci eos
+    modi quia laboriosam ipsa commodi? Aliquid quod praesentium atque quam?
+    Blanditiis nemo fuga magnam. Laboriosam quia fugit, ea iusto excepturi
+    voluptatem beatae a quae nulla cum vero libero voluptas, iste laudantium,
+    ab qui. Soluta, cumque dolor. Harum autem dolorum iusto!
+  </footer>
+</body>
+</html>
+

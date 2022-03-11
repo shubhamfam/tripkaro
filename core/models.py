@@ -9,7 +9,7 @@ class Place(models.Model):
 
     city = models.CharField(max_length=255, null=True)
     tag = models.CharField(max_length=255, null=True)
-    img = models.ImageField(upload_to='static/uploads/', null=True)
+    img = models.ImageField(upload_to='uploads', null=True)
     
     #timings - intime outtime
     #entryfee

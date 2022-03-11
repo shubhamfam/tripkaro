@@ -4,13 +4,13 @@
 
 <main class="main-container">
   <div class="plantrip-form-container">
-    <form action="" method="post">
+    <form action="{% url 'plans' %}" mwthod="post">
       <div class="plantrip-row">
         <div class="input">
           <div class="label">
             <label for="fname">First Name</label>
           </div>
-          <input type="text" class="input" id="fname" />
+          <input type="text" class="input" id="fname" name='fname' required/>
         </div>
       </div>
       <div class="plantrip-row">
@@ -18,7 +18,7 @@
           <div class="label">
             <label for="lname">Last Name</label>
           </div>
-          <input type="text" class="input" id="lname" />
+          <input type="text" class="input" id="lname" name='lname' required/>
         </div>
       </div>
       <div class="plantrip-row">
@@ -41,35 +41,35 @@
       <div class="plantrip-row">
         <div class="input">
           <div class="label"><label for="email">Email</label></div>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email" required/>
         </div>
         <div class="input">
           <div class="label"><label for="phone">Contact Number</label></div>
-          <input type="tel" name="contact" id="Contact" />
+          <input type="tel" name="contact" id="Contact" required/>
         </div>
       </div>
       <div class="plantrip-row">
         <div class="input">
           <div class="label"><label for="city">City</label></div>
-          <input type="text" class="input" id="city" />
+          <input type="text" class="input" id="city" name='city' required/>
         </div>
       </div>
       <div class="plantrip-row">
         <div class="input">
           <div class="label"><label for="state">State</label></div>
-          <input type="text" class="input" id="state" />
+          <input type="text" class="input" id="state" name='state' required/>
         </div>
       </div>
       <div class="plantrip-row">
         <div class="input">
           <div class="label"><label for="destination">Destination</label></div>
-          <input type="text" class="input" id="destination" />
+          <input type="text" class="input" id="destination" name='destination' required/>
         </div>
       </div>
       <div class="plantrip-row">
         <div class="input">
           <div class="label"><label for="date">Date</label></div>
-          <input type="date" name="date" id="date" />
+          <input type="date" name="date" id="date" required/>
         </div>
       </div>
       <div class="plantrip-row">
@@ -82,9 +82,9 @@
         <div class="input">
           <div class="label">Budget Range</div>
           <label for="min">Min</label>
-          <input type="number" name="budget-min" id="min" />
+          <input type="number" name="budget-min" id="min" value="20000" />
           <label for="max">Max</label>
-          <input type="number" name="budget-max" id="max" />
+          <input type="number" name="budget-max" id="max" value="100000" />
         </div>
       </div>
       <div class="plantrip-row">
@@ -99,6 +99,13 @@
           </select>
         </div>
       </div>
+      <div class="plantrip-row">
+        <input type="submit" value="Plan My Trip" class="primary-btn" >
+      </div>
+      <div class="btn-container">
+        <input class="button" type="reset" value="Back" onclick="history.back()" style="background-color:var(--primary_color)">
+        <!--<input class="button" type="submit" value="Edit Trip information">-->
+ </div>
     </form>
   </div>
 </main>

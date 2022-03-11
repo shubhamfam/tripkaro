@@ -1,0 +1,21 @@
+{% extends "base.html" %} {%load static%} {% block main %}
+<section class="basic-packages">
+       <header>
+              <h3>Plans within your budget</h2>
+       </header>
+       <div class="packs-row card-row">
+              <a href="{% url 'packageinfo' %}">
+                     <div class="card pack_card">
+                            <div class="card-header">
+                                   <img src="{% static 'assets/cards-temp/goa.jpeg' %}" class="circle-img" alt="..." />
+                                   <div class="card-body">
+                                          <h5 class="card-title">{{city}} -> {{destination}}</h5>
+                                          <p>@ <span>{{budget}}</span></p>
+                                   </div>
+                            </div>
+                     </div>
+              </a>
+
+       </div>
+</section>
+{% endblock main %}

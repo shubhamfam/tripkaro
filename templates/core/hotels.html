@@ -1,101 +1,189 @@
-{% extends "base.html" %} 
-{%load static%} 
-{% block main %}
-
+{% extends "base.html" %} {%load static%} {% block main %}
 <main class="main-container">
   <div class="content">
-    <header class="content-headers">
-      <h1><center>Hotels</center></h1>
-    </header>
-    <div class="hotels-row card-row">
-      <div class="card hotel-card" style="width: 18rem">
+    {% if h %}
+    <main class="main-container">
+      <h1>{{h.name}}</h1>
+
+      <div class="about-container">
+        {% if h.img %}
         <img
-          src="{% static 'assets/hotel-types/cafe.png' %}"
-          class="circle-img"
+          src="/media/{{destination.img}}"
+          class="card-img-top"
+          alt="..."
+          width="200px"
+          height="200px"
+        />
+        {% else %}
+        <img
+          src="{% static 'assets/hotel-placeholder.png' %}"
+          class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
-          <h5 class="card-title">Hotels</h5>
-        </div>
+        {% endif %}
       </div>
 
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/dine.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Service Apartment</h5>
-        </div>
+      <div>
+        <h1>Description:-</h1>
+        <p>
+          {% if h.description %} {{h.description}} {% else %} Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Omnis blanditiis impedit
+          voluptatibus, distinctio sequi beatae hic tempora ea possimus deleniti
+          ratione fuga consectetur quaerat culpa eligendi dolores reiciendis
+          saepe placeat! Voluptatem ea delectus, maiores assumenda obcaecati
+          aspernatur voluptatum temporibus animi mollitia doloremque non, ab
+          pariatur itaque. Repellendus at, enim dolorum ex sunt expedita dolore
+          unde asperiores, natus ut, odit alias? Eveniet officia deleniti ullam
+          temporibus quibusdam vero laudantium distinctio minus aliquam corrupti
+          fuga nisi saepe, cum, tempore similique. Ad nam porro enim deserunt
+          nihil magnam totam est ipsum facere rem. Aperiam eius odit doloribus
+          nulla, nostrum sequi voluptate rerum repellendus ex est, maiores
+          quidem, esse mollitia voluptas voluptatibus sed animi! Id sit, numquam
+          veniam saepe esse dignissimos vel molestiae maiores. {% endif %}
+        </p>
+      </div>
+      <br /><br /><br />
+
+      <div>
+        <p><b>Facilities:</b>{{h.facilities}}</p>
+        <p><b>Additional Info: </b>{{h.additional_info}}</p>
+        <p><b>Address: </b>{{h.address}}</p>
+      </div>
+    </main>
+    {% elif not hotels %}
+    <section>
+      <header class="content-headers">
+        <h1><center>Hotels</center></h1>
+      </header>
+      <div class="hotels-row card-row">
+        <a href="Hotel">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/cafe.png' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hotels</h5>
+            </div>
+          </div>
+        </a>
+
+        <a href="Service Apartment">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/dine.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Service Apartment</h5>
+            </div>
+          </div></a
+        >
+
+        <a href="Resort">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/lodge.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Resort</h5>
+            </div>
+            {% for hotel in hotels %} {{hotel}} {% endfor %}
+          </div></a
+        >
+
+        <a href="Lodge">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/resort.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Lodge</h5>
+            </div>
+          </div>
+        </a>
+
+        <a href="BnB">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/luxury.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">BnB</h5>
+            </div>
+          </div></a
+        >
+
+        <a href="Hostel">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/inn.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Hostels</h5>
+            </div>
+          </div></a
+        >
+
+        <a href="Palace">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/suite.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Palace</h5>
+            </div>
+          </div></a
+        >
+
+        <a href="Cottage">
+          <div class="card hotel-card" style="width: 18rem">
+            <img
+              src="{% static 'assets/hotel-types/family.jpg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Cottage</h5>
+            </div>
+          </div></a
+        >
       </div>
 
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/lodge.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Resort</h5>
-        </div>
+      {% else %}
+      <div class="packs-row card-row">
+        {% for hotel in hotels %}
+        <a href="{{hotel.type}}/{{hotel.name}}">
+          <div class="card pack-card">
+            <div class="card-header">
+              <img
+                src="{% static 'assets/hotel-placeholder.png' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">{{hotel.name}}</h5>
+                <p><span>Rating : {{hotel.star_rating}}</span></p>
+              </div>
+            </div>
+          </div></a
+        >
+        {% endfor %}
       </div>
-
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/resort.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Lodge</h5>
-        </div>
-      </div>
-
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/luxury.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">BnB</h5>
-        </div>
-      </div>
-
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/inn.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Hostels</h5>
-        </div>
-      </div>
-
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/suite.jpeg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Palace</h5>
-        </div>
-      </div>
-
-      <div class="card hotel-card" style="width: 18rem">
-        <img
-          src="{% static 'assets/hotel-types/family.jpg' %}"
-          class="circle-img"
-          alt="..."
-        />
-        <div class="card-body">
-          <h5 class="card-title">Cottage</h5>
-        </div>
-      </div>
-    </div>
+    </section>
+    {% endif %}
   </div>
 </main>
 

@@ -1,26 +1,61 @@
-{% extends "base.html" %} {%load static%} 
-{%block main%}
+{% extends "base.html" %} {%load static%} {%block main%}
 <main class="main-container">
-    <section class="top-destinations">
-        <header class="content-headers">
-          <h3>Top Destinations in {{place}}</h3>
-        </header>
-        <div class="card-row">
-        {%for destination in data%}
-          <div class="card" style="width: 18rem">
-            <img
-              src="{%static destination.img %}"
-              class="card-img-top"
-              alt="..."
-              width="200px"
-              height="200px"
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{destination.name}}</h5>
-            </div>
+  <section class="top-destinations">
+    <header class="content-headers">
+      <h3>Top {{type}} destinations in {{place}}</h3>
+    </header>
+    <div class="card-row">
+      {%for destination in destinations%}
+      <a href="{%url 'destination' destination.name%}">
+
+      <div class="card" style="width: 18rem">
+        {% if destination.img %}  
+        <img
+            src="/media/{{destination.img}}"
+            class="card-img-top"
+            alt="..."
+            width="200px"
+            height="200px"
+          />
+        {% else %}  
+        <img
+        src="{% static 'assets/place-placeholder.png' %}"
+        class="card-img-top"
+            alt="..."
+            width="200px"
+            height="200px"
+          />
+        {% endif %}
+
+          <div class="card-body">
+            <h5 class="card-title">{{destination.name}}</h5>
           </div>
-        {%endfor%}
+      </div></a>
+      {%endfor%}
+    </div>
+  </section>
+  {% if hotels %}
+  <section class="top-destinations">
+    <header class="content-headers">
+      <h3>Top hotels in {{place}}</h3>
+    </header>
+    <div class="card-row">
+      {%for hotel in hotels%}
+      <a href="{%url 'hotels'%}{{hotel.type}}/{{hotel.name}}">
+      <div class="card" style="width: 18rem">
+        <img
+        src="{% static 'assets/hotel-placeholder.png' %}"
+          class="card-img-top"
+          alt="..."
+          width="200px"
+          height="200px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{hotel.name}}</h5>
         </div>
-      </section>
+      </div></a>
+      {%endfor%}
+    </div>
+  </section>{% endif %}
 </main>
 {%endblock main%}

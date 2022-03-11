@@ -1,0 +1,48 @@
+{% extends "base.html" %} 
+{%load static%} 
+{% block main %}
+<main class="main-container">
+<center>
+       <h1>{{destination.name}}</h1>
+
+
+       <div class="about-container">
+              {% if destination.img %}  
+              <img
+                  src="/media/{{destination.img}}"
+                  class="card-img-top"
+                  alt="..."
+                  width="200px"
+                  height="200px"
+                />
+              {% else %}  
+              <img
+              src="{% static 'assets/place-placeholder.png' %}"
+              class="card-img-top"
+                  alt="..."
+                  width="200px"
+                  height="200px"
+                />
+              {% endif %}
+       </div>
+
+       <div>
+              <h1>Description:-</h1>
+              <p>{% if destination.description %}  
+                   {{destination.description}}
+                     {% else %}  
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis blanditiis impedit voluptatibus, distinctio sequi beatae hic tempora ea possimus deleniti ratione fuga consectetur quaerat culpa eligendi dolores reiciendis saepe placeat!
+                    Voluptatem ea delectus, maiores assumenda obcaecati aspernatur voluptatum temporibus animi mollitia doloremque non, ab pariatur itaque. Repellendus at, enim dolorum ex sunt expedita dolore unde asperiores, natus ut, odit alias?
+                    Eveniet officia deleniti ullam temporibus quibusdam vero laudantium distinctio minus aliquam corrupti fuga nisi saepe, cum, tempore similique. Ad nam porro enim deserunt nihil magnam totam est ipsum facere rem.
+                    Aperiam eius odit doloribus nulla, nostrum sequi voluptate rerum repellendus ex est, maiores quidem, esse mollitia voluptas voluptatibus sed animi! Id sit, numquam veniam saepe esse dignissimos vel molestiae maiores.
+                     {% endif %}</p>
+       </div><br><br><br>
+
+       <div>
+              <h2>Visiting hrs: 7:00 am - 9:00 pm</h2>
+              <h2>Entry fee: Rs. 0</h2>
+              <h2>Time required: 1 Hr.</h2>
+</center>
+</div>
+</main>
+{% endblock main %}

@@ -54,3 +54,10 @@ input[type="tel"] {
 select, option , input[type=date]{
   font-size: 20px;
 }
+
+.primary-btn {
+  background-color: var(--primary_color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -1,0 +1,4 @@
+Holiday Packages -> Basic, Pro -> Basic package -> on the same page the user should see a  no. of trending places (as cards) in the basic package -> After the user clicks on a particular place, he should land on a page with the info. related to that place (Places to visit, accomodate, dine in & transportation) -> back (previous page) -> Proceed (fill the form) -> Click on "Plan my trip" button ->Buy package  ->
+
+
+Plan on my trip in the header -> fill the form -> Generated plans page will open ->

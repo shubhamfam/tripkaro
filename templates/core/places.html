@@ -2,11 +2,11 @@
 <main class="main-container">
   <div class="content">
     <div class="main-searchbox-searchbar">
-      <form class="place-type-form" action="{% url 'place' %}" method="get" onsubmit="submitForm(event)">
+      <form autocomplete="off" class="place-type-form" action="{% url 'place' %}" method="get" onsubmit="submitForm(event)">
         <input
           type="search"
           name="q"
-          id="searbar"
+          id="searchbar"
           aria-label="Search through site content"
           placeholder="Where you wanna go?"
           required
@@ -107,19 +107,36 @@
       </form>
     </div>
   </div>
-</main>
-<script type="text/JavaScript">
-  function submitForm(event){
-    event.preventDefault();
-  }
 
-  divs = document.querySelectorAll('.placetype-card')
-  form = document.forms[0]
-  Array.from(divs).forEach(function(div) {
-    div.addEventListener('click',(e) => {
-      form.innerHTML += '<input type="hidden" name="type" value='+e.target.parentNode.getAttribute('data-tag')+ '>'
-      form.submit()
+  <script type="text/JavaScript">
+    window.addEventListener( "pageshow", function ( event ) {
+      var historyTraversal = event.persisted || 
+                             ( typeof window.performance != "undefined" && 
+                                  window.performance.navigation.type === 2 );
+      if ( historyTraversal ) {
+        // Handle page restore.
+        window.location.reload();
+      }
+    });
+    
+    divs = document.querySelectorAll('.placetype-card')
+    form = document.forms[0]
+
+    q = document.querySelector('#searchbar')
+  
+    Array.from(divs).forEach(function(div) {
+      div.addEventListener('click',(e) => {
+        form.innerHTML += '<input type="hidden" name="type" value='+e.target.parentNode.getAttribute('data-tag')+ '>'
+        form.q.value = q.value
+        form.submit()
+      })
     })
-  })
-</script>
+
+    function submitForm(event){
+      event.preventDefault();
+    }
+  
+  </script>
+</main>
+
 {% endblock main %}

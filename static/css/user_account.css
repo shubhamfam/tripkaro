@@ -1,0 +1,113 @@
+.profile-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sidebar {
+  width: 30%;
+  height: 500px;
+  background-color: rgb(13, 12, 37);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar header {
+  padding: 16px;
+  margin: 5px;
+  text-align: center;
+}
+
+.sidebar-nav ul {
+  padding: 30px;
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul li:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-content {
+  border: 1px solid var(--primary_color);
+  padding: 50px;
+  width: 100%;
+}
+
+.profile-img {
+  background-color: rgb(194, 193, 212);
+  border-radius: 50%;
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.profile-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.my-trips {
+  padding: 50px;
+}
+
+.my-trips a {
+  text-decoration: none;
+  color: #000;
+}
+
+.my-trips .trip-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 5px;
+}
+
+.trip-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+}
+
+.trip-card-body button {
+  height: 50px;
+  width: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+}
+
+.red {
+  background-color: red;
+  color: #fff;
+}
+
+.green {
+  background-color: green;
+  color: #fff;
+}
+
+.small {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  padding: 10px;
+}
+

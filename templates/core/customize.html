@@ -1,0 +1,82 @@
+{% extends "base.html" %} {%load static%} {% block link %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+{% endblock link %} {% block main %}
+<div class="main-container">
+  <div class="w3-container">
+    <center>
+      <h2>Customize Your Plan</h2>
+      <br />
+    </center>
+    <h3>
+      Select "Add On" option to include a service & select "Remove" to exclude a
+      service
+    </h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-green w3-xlarge w3-padding-32"></li>
+        <div class="w3-third">
+          <img
+            src="https://mediaindia.eu/wp-content/uploads/2020/01/sarang-pande-k3SHcT9zGkE-unsplash.jpg"
+            style="width: 100%; min-height: 153px"
+          />
+        </div>
+        <li class="w3-padding-16"><b>Information</b></li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">Service-1</h2>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large">Add On</button>
+          <button class="w3-button w3-green w3-padding-large">Remove</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-green w3-xlarge w3-padding-32"></li>
+        <div class="w3-third">
+          <img
+            src="https://www.outlookindia.com/outlooktraveller/resizer.php?src=https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/shutterstock_1841991169.jpg&w=500&h=400"
+            style="width: 100%; min-height: 153px"
+          />
+        </div>
+        <li class="w3-padding-16"><b>Information</b></li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">Service-2</h2>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large">Add On</button>
+          <button class="w3-button w3-green w3-padding-large">Remove</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+        <li class="w3-green w3-xlarge w3-padding-32"></li>
+        <div class="w3-third">
+          <img
+            src="https://www.outlookindia.com/outlooktraveller/resizer.php?src=https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/shutterstock_1841991169.jpg&w=500&h=400"
+            style="width: 100%; min-height: 153px"
+          />
+        </div>
+        <li class="w3-padding-16"><b>Information</b></li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide">Service-3</h2>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-green w3-padding-large">Add On</button>
+          <button class="w3-button w3-green w3-padding-large">Remove</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <button class="w3-button w3-green w3-padding-large">Modify</button>
+  </div>
+</div>
+{% endblock main %}

@@ -1,0 +1,259 @@
+{% extends "base.html" %} {%load static%} {% block link %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+{% endblock link %} {% block main %}
+
+<main class="main-container">
+  <div class="content">
+    <div class="w3-container">
+      <center>
+        <h2>Plans That Suite Your Budget</h2>
+      </center>
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+          <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
+          <div class="w3-third">
+            <img
+              src="https://mediaindia.eu/wp-content/uploads/2020/01/sarang-pande-k3SHcT9zGkE-unsplash.jpg"
+              style="width: 100%; min-height: 153px"
+            />
+          </div>
+          <li class="w3-padding-16"><b>Package Information</b></li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">Rs 7000+</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-green w3-padding-large">
+              <a href="{%url 'index'%}"> Back</a>
+            </button>
+            <button class="w3-button w3-green w3-padding-large showplanbtn" onclick="showPlan('basic');">
+              Next
+              <!--<a href="{%url 'packageinfo'%}"> Next</a>-->
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+          <li class="w3-green w3-xlarge w3-padding-32">Pro</li>
+          <div class="w3-third">
+            <img
+              src="https://www.outlookindia.com/outlooktraveller/resizer.php?src=https://www.outlookindia.com/outlooktraveller/public/uploads/articles/explore/shutterstock_1841991169.jpg&w=500&h=400"
+              style="width: 100%; min-height: 153px"
+            />
+          </div>
+          <li class="w3-padding-16"><b>Package Information</b></li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">Rs.15000+</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-green w3-padding-large">
+              <a href="{%url 'index'%}"> Back</a>
+            </button>
+            <button class="w3-button w3-green w3-padding-large showplanbtn" onclick="showPlan('pro');">
+              <!--<a href="{%url 'packageinfo'%}"> Next</a>-->
+              Next
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-center w3-hover-shadow">
+          <li class="w3-black w3-xlarge w3-padding-32">Premium</li>
+          <div class="w3-third">
+            <img
+              src="https://img.veenaworld.com/group-tours/india/uttar-pradesh/stad/shni1-thb-stad-1492021.jpg"
+              style="width: 100%; min-height: 153px"
+            />
+          </div>
+          <li class="w3-padding-16"><b>Package Information</b></li>
+          <li class="w3-padding-16">
+            <h2 class="w3-wide">Rs.30000+</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <button class="w3-button w3-green w3-padding-large">
+              <a href="{%url 'index'%}"> Back</a>
+            </button>
+            <button class="w3-button w3-green w3-padding-large showplanbtn" onclick="showPlan('premium');">
+              <!--<a href="{%url 'packageinfo'%}"> Next</a>-->
+              Next
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="basic-packages" style="display: none">
+    <header>
+        <h3>Basic Holiday Plans</h2>
+    </header>
+    <div class="packs-row card-row">
+        <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+            <div class="card-header">
+                <img
+                src="{% static 'assets/cards-temp/goa.jpeg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package II   </h5>
+                <p>Starting from <span>Rs.6000</span></p>
+              </div>
+            </div>
+        </div></a>
+
+        <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+            <div class="card-header">
+                <img
+                src="{% static 'assets/cards-temp/manali.jpeg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package II</h5>
+                <p>Starting from <span>Rs.8000</span></p>
+              </div>
+            </div>
+        </div></a>
+
+
+        <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+            <div class="card-header">
+                <img
+                src="{% static 'assets/cards-temp/jaipur.jpeg' %}"
+                class="circle-img"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Package III</h5>
+                <p>Starting from <span>Rs.10000</span></p>
+              </div>
+            </div>
+        </div></a>
+
+
+    </div>
+</section>
+
+<section class="pro-packages" style="display: none">
+  <header>
+      <h3>Pro Holiday Plans</h2>
+  </header>
+  <div class="packs-row card-row">
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/goa.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package II   </h5>
+              <p>Starting from <span>Rs.15000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/manali.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package II</h5>
+              <p>Starting from <span>Rs.18000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/jaipur.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package III</h5>
+              <p>Starting from <span>Rs.20000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+
+  </div>
+</section>
+
+<section class="premium-packages" style="display: none">
+  <header>
+      <h3>Premium Holiday Plans</h2>
+  </header>
+  <div class="packs-row card-row">
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/goa.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package II   </h5>
+              <p>Starting from <span>Rs.30000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/manali.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package II</h5>
+              <p>Starting from <span>Rs.40000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+
+      <a href="{% url 'packageinfo' %}"><div class="card pack_card">
+          <div class="card-header">
+              <img
+              src="{% static 'assets/cards-temp/jaipur.jpeg' %}"
+              class="circle-img"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Package III</h5>
+              <p>Starting from <span>Rs.50000</span></p>
+            </div>
+          </div>
+      </div></a>
+
+
+  </div>
+</section>
+
+</main>
+<script>
+    const showPlan = (type)=> {
+      const sections = document.querySelectorAll('section')
+      sections.forEach((sect)=> sect.style.display='none')
+
+      const section = document.querySelector(`.${type}-packages`)
+      section.style.display = 'block';
+    }
+</script>
+{% endblock main %}

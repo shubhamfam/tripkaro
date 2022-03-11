@@ -1,0 +1,11 @@
+Remaining work:
+1. Hotel pages linking
+2. Holiday packages linking
+3. Home page search box place images
+4. Top destinations linking
+5. footer
+6. About us
+7. Plan your trip page option
+8. Form back button
+9. Plan your trip button linking
+10. User account page
